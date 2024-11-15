@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Adicionar Personagem{% endblock %}
+
+{% block template %}
+<section id="adicionar-dado">
+  <div class="form-container">
+    <h2>Adicionar Personagem</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ formulario }}
+      <button type="submit">Salvar</button>
+      <a href="/home" class="cancel-button">Cancelar</a>
+    </form>
+  </div>
+</section>
+{% endblock %}

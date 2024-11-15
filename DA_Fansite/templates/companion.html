@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Detalhes {{ personagem.nome }} {% endblock %}
+
+{% block template %}
+<section id="companion">
+  <div class="companion">
+    <h2>{{ personagem.nome }}</h2>
+    <img src="{{ personagem.icone_URL }}" alt="{{ personagem.alt }}">
+    {% for descricao in personagem.description %}
+    <p>{{ descricao }}</p>
+    {% endfor %}
+    {% for referencia in personagem.referencias %}
+      <a href="{{ referencia.link }}" target="_blank">Saiba mais sobre {{ personagem.nome }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

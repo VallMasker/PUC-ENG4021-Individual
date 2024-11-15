@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Remover Personagem{% endblock %}
+
+{% block template %}
+<section id="remover-dado">
+  <div class="form-container">
+    <h2>Remover Personagem</h2>
+    <p>Você tem certeza que deseja remover o item "{{ personagem.nome }}"?</p>
+    <p>Essa ação não poderá ser desfeita!!!</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Remover</button>
+      <a href="/home" class="cancel-button">Cancelar</a>
+    </form>
+  </div>
+</section>
+{% endblock %}

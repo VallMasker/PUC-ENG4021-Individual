@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Detalhes do {{ classe.nome }} {% endblock %}
+
+{% block template %}
+<section id="classe">
+  <div class="class-text">
+    <h2>{{ classe.nome }}</h2>
+    <img src="{{ classe.icone_URL }}" alt="{{ classe.alt }}">
+    <p>{% for paragrafo in description %}
+    <p>{{ paragrafo }}</p>
+    {% endfor %}</p>
+    <a href="{{ classe.link }}" target="_blank">Saiba mais sobre {{ classe.nome }}</a>
+  </div>
+</section>
+{% endblock %}

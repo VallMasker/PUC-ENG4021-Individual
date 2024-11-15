@@ -1,0 +1,411 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Sedan';
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0px 3px 10px black;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(153,174,149);
+  font-weight: bold;
+}
+
+a:hover {
+  color: rgb(211,220,185);
+}
+
+label {
+  display: block;
+  color: rgb(211, 220, 185);
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid rgb(211, 220, 185);
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: rgb(153, 161, 130);
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(211,220,185);
+  color: black;
+}
+
+/*Header*/
+.navbar-brand {
+  color: rgb(211,220,185);
+  font-weight: 400;
+  position: relative;
+}
+
+.nav-link {
+  color: rgb(211,220,185);
+  font-weight: 400;
+  position: relative;
+}
+
+.nav-link:hover, .navbar-nav, .nav-link.active, .navbar-brand:hover {
+  color: rgba(254,252,237,255);
+}
+
+.navbar-toggler-text {
+  color:rgb(211,220,185);
+}
+
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 2px;
+    background-color: rgb(153,174,149, 0.6);
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+    background-color: rgb(153,174,149);
+    visibility: visible;
+  }
+}
+
+.dropdown-item:hover {
+  color: rgb(211,220,185);
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/*banner*/
+.hero-section {
+  background: url(images/da.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+}
+
+.hero-text {
+  margin: 20vh 2vh 10vh 2vh;
+  padding: 10vh 0 10vh;
+  
+}
+
+/* Página do usuário */
+.user-section {
+  background: url(images/da.png) no-repeat;
+  background-position: center 15%;
+  background-size: cover;
+  width:100%;
+  display: flex;
+}
+
+.user-text {
+  margin: 20vh 2vh 10vh 2vh;
+  text-shadow: 0px 3px 10px black;
+}
+
+/*lista*/
+.lista {
+  background: url(images/da-back2.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.incones {
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%;
+  border: 2px solid rgb(211,220,185);
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.nomes {
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover .incones, .icon-container:hover .nomes {
+  transform: scale(1.1);
+  text-shadow: 0px 3px 10px rgb(211,220,185);
+}
+
+/* Tabela */
+.lista2 {
+  background: rgba(22,22,22,255);
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+  color: rgba(254,252,237,255);
+}
+
+#lista2 h2 {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+  color: rgba(254,252,237,255);
+}
+
+tbody tr:nth-child(even) {
+  background-color: black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(84,85,74);
+}
+
+/* Footer */
+#footer {
+  background: rgba(23,33,23,0.8);
+  padding: 3vh 0 3vh;
+  text-align: center;
+}
+
+#footer h1 {
+  font-size: 30px;
+}
+
+#footer a img {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  opacity: 75%;
+}
+
+#footer a img:hover {
+  opacity: 100%;
+}
+
+/* companion.html */
+#companion {
+  background: url(images/da-back1.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.companion {
+  text-align: center;
+  padding: 10vh 0 0;
+}
+
+.companion h2 {
+  text-align: center;
+}
+
+.companion img {
+  width: 23%;
+  border-radius: 50%;
+  border: 2px solid rgb(211,220,185);
+}
+
+/* classe.html */
+#classe {
+  background-color: black;
+}
+
+.class-text {
+  text-align: center;
+  padding: 10vh 1vh 0;
+}
+
+.class-text h2 {
+  text-align: center;
+}
+
+/* Forms */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 0 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.cancel-button {
+  background-color: rgb(184,47,49);
+  color: white;
+  font-weight: 200;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: rgb(230, 61, 64);
+  color: black;
+}
+
+/* Adicionar Dado */
+#adicionar-dado {
+  background: url(images/fundoforms.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+}
+
+#adicionar-dado h2 {
+  text-shadow: 0px 3px 10px black;
+}
+
+/* Editar Dado */
+#editar-dado {
+  background: url(images/fundoforms.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+}
+
+#editar-dado h2 {
+  text-shadow: 0px 3px 10px black;
+}
+
+/* Remover Dado */
+#remover-dado {
+  background: url(images/fundoforms.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  padding: 15% 0 15%; 
+}
+
+#remover-dado h2 {
+  text-shadow: 0px 3px 10px black;
+}
+
+/* Entrar */
+#entrar {
+  background: url(images/da.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  padding: 15% 0 15%; 
+}
+
+.entrar {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 0 20px;
+}
+
+.entrar button a {
+  color: white;
+  font-weight: 200;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Login */
+#login {
+  background: url(images/da.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  padding: 15% 0 15%; 
+}
+
+.login {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 0 20px;
+}
+
+/* Cadastro */
+#cadastro {
+  background: url(images/da.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+  display: flex;
+  padding: 15% 0 15%; 
+}
+
+.cadastro {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 70px 0 20px;
+}
+
+/* Celular */
+@media screen and (max-width: 768px) {
+  .hero-text {
+    margin: 5vh 2vh 5vh 2vh;
+    padding: 5vh 0 5vh;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  td:nth-of-type(1):before { content: "Classe:"; }
+  td:nth-of-type(2):before { content: "Descrição:"; }
+  td:nth-of-type(3):before { content: "Mais Informações:"; }
+}

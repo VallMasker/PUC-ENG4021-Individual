@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} LogIn {{ personagem.nome }} {% endblock %}
+
+{% block template %}
+<section id="login">
+  <div class="login">
+    <form method="POST">
+      {% csrf_token %}
+      {{ formulario }}
+      <button type="submit">LogIn</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dragon Age Fanlist{% endblock %}
+
+{% block template %}
+
+<!-- Banner -->
+<section class="user-section">
+  <div class="user-text">
+    <h1>Olá, {{usuario.first_name}}!</h1>
+    <a href="/logout">Sair</a>
+  </div>
+</section>
+
+<!-- Personagens -->
+<section id="lista" class="lista">
+  <h2>Ranking dos Companions</h2>
+  <a href="/adicionar-dado">Adicionar Dado</a>
+  <div>
+    <ol>
+      {% for personagem in personagens %}
+      <li>
+        <div class="icon-container">
+          <img src="{{ personagem.icone_URL }}" alt="{{ personagem.alt }}" class="incones" />
+          <strong class="nomes">{{ personagem.nome }}</strong>
+        </div>
+        <ul>
+          {% for descricao in personagem.description %}
+          <li>{{ descricao }}</li>
+          {% endfor %}
+          <li>
+            {% for referencia in personagem.referencias %}
+              <a href="{{ referencia.link }}" target="_blank">Saiba mais sobre {{ personagem.nome }}</a>
+            {% endfor %}
+          </li>
+        </ul>
+      </li>
+      <a href="/editar-dado/{{ personagem.id }}">Editar</a>
+      <a href='/remover-dado/{{ personagem.id }}'>Remover Personagem</a>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+
+<!-- Classes -->
+<section id="lista2" class="lista2">
+    <h2>Listas das classes</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Classe</th>
+                    <th>Descrição</th>
+                    <th>Mais Informações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for classe in classes %}
+                <tr>
+                    <td>
+                        <div class="icon-container">
+                            <img src="{{ classe.icone_URL }}" alt="{{ classe.nome }} icon" class="incones">
+                            <strong class="nomes">{{ classe.nome }}</strong>
+                        </div>
+                    </td>
+                    <td>{% for descricao in classe.description %}
+                    <li>{{ descricao }}</li>
+                    {% endfor %}</td>
+                    <td><a href="{{ classe.link }}" target="_blank"> A casa do {{ classe.nome }}!</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
